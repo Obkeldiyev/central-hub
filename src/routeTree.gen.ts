@@ -9,8 +9,104 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrackingRouteImport } from './routes/tracking'
+import { Route as SyncRouteImport } from './routes/sync'
+import { Route as ShiftsRouteImport } from './routes/shifts'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SchedulesRouteImport } from './routes/schedules'
+import { Route as PeopleRouteImport } from './routes/people'
+import { Route as OrganizationRouteImport } from './routes/organization'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as LicensesRouteImport } from './routes/licenses'
+import { Route as DevicesRouteImport } from './routes/devices'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as AttendanceRouteImport } from './routes/attendance'
+import { Route as ApprovalsRouteImport } from './routes/approvals'
+import { Route as AccessPointsRouteImport } from './routes/access-points'
+import { Route as AccessControlRouteImport } from './routes/access-control'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TrackingRoute = TrackingRouteImport.update({
+  id: '/tracking',
+  path: '/tracking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SyncRoute = SyncRouteImport.update({
+  id: '/sync',
+  path: '/sync',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShiftsRoute = ShiftsRouteImport.update({
+  id: '/shifts',
+  path: '/shifts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchedulesRoute = SchedulesRouteImport.update({
+  id: '/schedules',
+  path: '/schedules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PeopleRoute = PeopleRouteImport.update({
+  id: '/people',
+  path: '/people',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizationRoute = OrganizationRouteImport.update({
+  id: '/organization',
+  path: '/organization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicensesRoute = LicensesRouteImport.update({
+  id: '/licenses',
+  path: '/licenses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevicesRoute = DevicesRouteImport.update({
+  id: '/devices',
+  path: '/devices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttendanceRoute = AttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApprovalsRoute = ApprovalsRouteImport.update({
+  id: '/approvals',
+  path: '/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessPointsRoute = AccessPointsRouteImport.update({
+  id: '/access-points',
+  path: '/access-points',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessControlRoute = AccessControlRouteImport.update({
+  id: '/access-control',
+  path: '/access-control',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +115,256 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/access-control': typeof AccessControlRoute
+  '/access-points': typeof AccessPointsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/attendance': typeof AttendanceRoute
+  '/dashboard': typeof DashboardRoute
+  '/devices': typeof DevicesRoute
+  '/licenses': typeof LicensesRoute
+  '/login': typeof LoginRoute
+  '/organization': typeof OrganizationRoute
+  '/people': typeof PeopleRoute
+  '/schedules': typeof SchedulesRoute
+  '/security': typeof SecurityRoute
+  '/settings': typeof SettingsRoute
+  '/shifts': typeof ShiftsRoute
+  '/sync': typeof SyncRoute
+  '/tracking': typeof TrackingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/access-control': typeof AccessControlRoute
+  '/access-points': typeof AccessPointsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/attendance': typeof AttendanceRoute
+  '/dashboard': typeof DashboardRoute
+  '/devices': typeof DevicesRoute
+  '/licenses': typeof LicensesRoute
+  '/login': typeof LoginRoute
+  '/organization': typeof OrganizationRoute
+  '/people': typeof PeopleRoute
+  '/schedules': typeof SchedulesRoute
+  '/security': typeof SecurityRoute
+  '/settings': typeof SettingsRoute
+  '/shifts': typeof ShiftsRoute
+  '/sync': typeof SyncRoute
+  '/tracking': typeof TrackingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/access-control': typeof AccessControlRoute
+  '/access-points': typeof AccessPointsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/attendance': typeof AttendanceRoute
+  '/dashboard': typeof DashboardRoute
+  '/devices': typeof DevicesRoute
+  '/licenses': typeof LicensesRoute
+  '/login': typeof LoginRoute
+  '/organization': typeof OrganizationRoute
+  '/people': typeof PeopleRoute
+  '/schedules': typeof SchedulesRoute
+  '/security': typeof SecurityRoute
+  '/settings': typeof SettingsRoute
+  '/shifts': typeof ShiftsRoute
+  '/sync': typeof SyncRoute
+  '/tracking': typeof TrackingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/access-control'
+    | '/access-points'
+    | '/approvals'
+    | '/attendance'
+    | '/dashboard'
+    | '/devices'
+    | '/licenses'
+    | '/login'
+    | '/organization'
+    | '/people'
+    | '/schedules'
+    | '/security'
+    | '/settings'
+    | '/shifts'
+    | '/sync'
+    | '/tracking'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/access-control'
+    | '/access-points'
+    | '/approvals'
+    | '/attendance'
+    | '/dashboard'
+    | '/devices'
+    | '/licenses'
+    | '/login'
+    | '/organization'
+    | '/people'
+    | '/schedules'
+    | '/security'
+    | '/settings'
+    | '/shifts'
+    | '/sync'
+    | '/tracking'
+  id:
+    | '__root__'
+    | '/'
+    | '/access-control'
+    | '/access-points'
+    | '/approvals'
+    | '/attendance'
+    | '/dashboard'
+    | '/devices'
+    | '/licenses'
+    | '/login'
+    | '/organization'
+    | '/people'
+    | '/schedules'
+    | '/security'
+    | '/settings'
+    | '/shifts'
+    | '/sync'
+    | '/tracking'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessControlRoute: typeof AccessControlRoute
+  AccessPointsRoute: typeof AccessPointsRoute
+  ApprovalsRoute: typeof ApprovalsRoute
+  AttendanceRoute: typeof AttendanceRoute
+  DashboardRoute: typeof DashboardRoute
+  DevicesRoute: typeof DevicesRoute
+  LicensesRoute: typeof LicensesRoute
+  LoginRoute: typeof LoginRoute
+  OrganizationRoute: typeof OrganizationRoute
+  PeopleRoute: typeof PeopleRoute
+  SchedulesRoute: typeof SchedulesRoute
+  SecurityRoute: typeof SecurityRoute
+  SettingsRoute: typeof SettingsRoute
+  ShiftsRoute: typeof ShiftsRoute
+  SyncRoute: typeof SyncRoute
+  TrackingRoute: typeof TrackingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tracking': {
+      id: '/tracking'
+      path: '/tracking'
+      fullPath: '/tracking'
+      preLoaderRoute: typeof TrackingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sync': {
+      id: '/sync'
+      path: '/sync'
+      fullPath: '/sync'
+      preLoaderRoute: typeof SyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shifts': {
+      id: '/shifts'
+      path: '/shifts'
+      fullPath: '/shifts'
+      preLoaderRoute: typeof ShiftsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedules': {
+      id: '/schedules'
+      path: '/schedules'
+      fullPath: '/schedules'
+      preLoaderRoute: typeof SchedulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/people': {
+      id: '/people'
+      path: '/people'
+      fullPath: '/people'
+      preLoaderRoute: typeof PeopleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organization': {
+      id: '/organization'
+      path: '/organization'
+      fullPath: '/organization'
+      preLoaderRoute: typeof OrganizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licenses': {
+      id: '/licenses'
+      path: '/licenses'
+      fullPath: '/licenses'
+      preLoaderRoute: typeof LicensesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devices': {
+      id: '/devices'
+      path: '/devices'
+      fullPath: '/devices'
+      preLoaderRoute: typeof DevicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attendance': {
+      id: '/attendance'
+      path: '/attendance'
+      fullPath: '/attendance'
+      preLoaderRoute: typeof AttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/approvals': {
+      id: '/approvals'
+      path: '/approvals'
+      fullPath: '/approvals'
+      preLoaderRoute: typeof ApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/access-points': {
+      id: '/access-points'
+      path: '/access-points'
+      fullPath: '/access-points'
+      preLoaderRoute: typeof AccessPointsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/access-control': {
+      id: '/access-control'
+      path: '/access-control'
+      fullPath: '/access-control'
+      preLoaderRoute: typeof AccessControlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +377,23 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessControlRoute: AccessControlRoute,
+  AccessPointsRoute: AccessPointsRoute,
+  ApprovalsRoute: ApprovalsRoute,
+  AttendanceRoute: AttendanceRoute,
+  DashboardRoute: DashboardRoute,
+  DevicesRoute: DevicesRoute,
+  LicensesRoute: LicensesRoute,
+  LoginRoute: LoginRoute,
+  OrganizationRoute: OrganizationRoute,
+  PeopleRoute: PeopleRoute,
+  SchedulesRoute: SchedulesRoute,
+  SecurityRoute: SecurityRoute,
+  SettingsRoute: SettingsRoute,
+  ShiftsRoute: ShiftsRoute,
+  SyncRoute: SyncRoute,
+  TrackingRoute: TrackingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
