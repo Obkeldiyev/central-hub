@@ -13,8 +13,9 @@ const en = {
   auth: {
     signIn: "Sign in", username: "Username", password: "Password", remember: "Remember me",
     welcome: "Welcome back", subtitle: "Sign in to your HikCentral console",
-    invalid: "Invalid credentials", apiError: "Cannot reach server. Check API URL in settings.",
-    backendUrl: "Backend URL",
+    invalid: "Invalid credentials", apiError: "Cannot reach backend server.",
+    backendUrl: "Backend URL", setupTitle: "Create the first admin", setupSubtitle: "No admin exists yet. Create the owner account to continue.",
+    firstName: "First name", secondName: "Second name", createAdmin: "Create admin",
   },
   common: {
     search: "Search", refresh: "Refresh", save: "Save", cancel: "Cancel", create: "Create",
@@ -53,8 +54,9 @@ const ru: typeof en = {
   auth: {
     signIn: "Войти", username: "Логин", password: "Пароль", remember: "Запомнить меня",
     welcome: "С возвращением", subtitle: "Войдите в консоль HikCentral",
-    invalid: "Неверные данные", apiError: "Сервер недоступен. Проверьте URL в настройках.",
-    backendUrl: "URL бэкенда",
+    invalid: "Неверные данные", apiError: "Сервер недоступен.",
+    backendUrl: "URL бэкенда", setupTitle: "Создайте первого администратора", setupSubtitle: "Администраторов пока нет. Создайте основной аккаунт.",
+    firstName: "Имя", secondName: "Фамилия", createAdmin: "Создать администратора",
   },
   common: {
     search: "Поиск", refresh: "Обновить", save: "Сохранить", cancel: "Отмена", create: "Создать",
@@ -93,8 +95,9 @@ const uz: typeof en = {
   auth: {
     signIn: "Kirish", username: "Login", password: "Parol", remember: "Eslab qolish",
     welcome: "Xush kelibsiz", subtitle: "HikCentral konsolingizga kiring",
-    invalid: "Noto‘g‘ri ma’lumot", apiError: "Server topilmadi. Sozlamalardan API URL ni tekshiring.",
-    backendUrl: "Backend URL",
+    invalid: "Noto‘g‘ri ma’lumot", apiError: "Backend server topilmadi.",
+    backendUrl: "Backend URL", setupTitle: "Birinchi adminni yarating", setupSubtitle: "Hali admin yo‘q. Davom etish uchun asosiy akkaunt yarating.",
+    firstName: "Ism", secondName: "Familiya", createAdmin: "Admin yaratish",
   },
   common: {
     search: "Qidirish", refresh: "Yangilash", save: "Saqlash", cancel: "Bekor qilish", create: "Yaratish",

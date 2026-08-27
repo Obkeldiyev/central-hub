@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Save, Sun, Moon, Monitor, Globe, Server, Building2, RotateCcw, Check } from "lucide-react";
+import { Save, Sun, Moon, Monitor, Globe, Building2, RotateCcw, Check } from "lucide-react";
 import { AppLayout } from "@/components/AppLayout";
 import { RequireAuth } from "@/components/RequireAuth";
 import { PageHeader, Card } from "@/components/ui-kit";
 import { useTheme } from "@/lib/theme";
-import { getApiUrl, setApiUrl, DEFAULT_API_URL } from "@/lib/api";
 import { getSettings, saveSettings } from "@/lib/settings";
 
 export const Route = createFileRoute("/settings")({
@@ -21,21 +20,18 @@ function SettingsPage() {
   const { t, i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
   const init = getSettings();
-  const [apiUrl, setApi] = useState(getApiUrl());
   const [companyName, setCompany] = useState(init.companyName);
   const [logoUrl, setLogo] = useState(init.logoUrl);
   const [bridgeToken, setBridge] = useState(init.bridgeToken);
   const [saved, setSaved] = useState(false);
 
   const onSave = () => {
-    setApiUrl(apiUrl);
     saveSettings({ companyName, logoUrl, bridgeToken });
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };
 
   const onReset = () => {
-    setApi(DEFAULT_API_URL);
     setCompany("HikCentral Pro");
     setLogo("");
     setBridge("");
@@ -91,17 +87,6 @@ function SettingsPage() {
       />
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <Section icon={Server} title={t("settings.api")}>
-          <Field label={t("settings.apiUrl")} hint={t("settings.apiUrlHelp")}>
-            <input value={apiUrl} onChange={(e) => setApi(e.target.value)} placeholder={DEFAULT_API_URL}
-              className="h-10 w-full rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-          </Field>
-          <Field label={t("settings.bridgeToken")}>
-            <input type="password" value={bridgeToken} onChange={(e) => setBridge(e.target.value)}
-              className="h-10 w-full rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-          </Field>
-        </Section>
-
         <Section icon={Building2} title={t("settings.general")}>
           <Field label={t("settings.company")}>
             <input value={companyName} onChange={(e) => setCompany(e.target.value)}
@@ -109,6 +94,10 @@ function SettingsPage() {
           </Field>
           <Field label={t("settings.logoUrl")}>
             <input value={logoUrl} onChange={(e) => setLogo(e.target.value)} placeholder="https://..."
+              className="h-10 w-full rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+          </Field>
+          <Field label={t("settings.bridgeToken")}>
+            <input type="password" value={bridgeToken} onChange={(e) => setBridge(e.target.value)}
               className="h-10 w-full rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
           </Field>
         </Section>
